@@ -1,0 +1,42 @@
+<%= form_with(model: rugby_world_cup_host_country) do |form| %>
+  <% if rugby_world_cup_host_country.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(rugby_world_cup_host_country.errors.count, "error") %> prohibited this rugby_world_cup_host_country from being saved:</h2>
+
+      <ul>
+        <% rugby_world_cup_host_country.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :total_attendance, style: "display: block" %>
+    <%= form.number_field :total_attendance %>
+  </div>
+
+  <div>
+    <%= form.label :matches, style: "display: block" %>
+    <%= form.number_field :matches %>
+  </div>
+
+  <div>
+    <%= form.label :stadium_capacity, style: "display: block" %>
+    <%= form.number_field :stadium_capacity %>
+  </div>
+
+  <div>
+    <%= form.label :held_at, style: "display: block" %>
+    <%= form.datetime_field :held_at %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

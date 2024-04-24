@@ -1,0 +1,18 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Rugby world cup host countries</h1>
+
+<%= column_chart RugbyWorldCupHostCountry.pluck(:held_at, :total_attendance) %>
+<!-- 追記 -->
+
+
+<div id="rugby_world_cup_host_countries">
+  <% @rugby_world_cup_host_countries.each do |rugby_world_cup_host_country| %>
+    <%= render rugby_world_cup_host_country %>
+    <p>
+      <%= link_to "Show this rugby world cup host country", rugby_world_cup_host_country %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New rugby world cup host country", new_rugby_world_cup_host_country_path %>
